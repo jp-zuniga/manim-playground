@@ -2,18 +2,18 @@
 les fuckin gooooooooo
 """
 
-import numpy as np  # type: ignore # pylint: disable=E0401
-import manim as ma  # type: ignore # pylint: disable=E0401
+import numpy as np
+import manim as ma  # type: ignore
 
 
 class RotateGraph(ma.ThreeDScene):
     """
-    mentoria de calculo go brrrrr
+    mentoría de calculo go brrrrr
     """
 
     def construct(self):
         """
-        animar la revolucion (down with the bourgeoisie bitch) de una grafica
+        animar la revolución (rise up) de una gráfica
         """
 
         ax = ma.ThreeDAxes(
@@ -43,7 +43,7 @@ class RotateGraph(ma.ThreeDScene):
                 about_point=ma.ORIGIN,
                 axis=ma.X_AXIS,
             ),
-            run_time=24,
+            run_time=12,
             rate_func=ma.smoothstep,
         )
 
@@ -54,26 +54,16 @@ class RotateGraph(ma.ThreeDScene):
             resolution=16,
         )
 
-        solid.move_to(ma.ORIGIN)
+        solid.move_to(ax)
         self.play(
             (
-                ma.FadeOut(graph, scale=0.5, target_position=ma.ORIGIN),
-                ma.FadeIn(solid),
+                ma.FadeOut(graph, scale=0.5, target_position=ax),
+                ma.FadeIn(solid, scale=1.5),
             ),
             run_time=3,
         )
 
-        self.move_camera(phi=ma.PI / 6, zoom=0.8, run_time=4)
+        self.move_camera(phi=3*ma.PI / 4, zoom=0.8, run_time=4)
         self.wait(2)
-        self.move_camera(phi=ma.PI / 4, run_time=4)
-        self.wait(10)
-
-
-def main():
-    """
-    go nuts mf
-    """
-
-
-if __name__ == "__main__":
-    main()
+        self.move_camera(phi=-ma.PI / 4, run_time=6)
+        self.wait(6)
