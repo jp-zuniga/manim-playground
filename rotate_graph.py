@@ -3,7 +3,7 @@ les fuckin gooooooooo
 """
 
 import numpy as np
-import manim as ma  # type: ignore
+import manim as ma  # type: ignore  # pylint: disable=E0401
 
 
 class RotateGraph(ma.ThreeDScene):
